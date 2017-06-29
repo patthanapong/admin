@@ -27,145 +27,146 @@ Route::get('index2', function (){
     return view('index2');
 });
 
-Route::get('top-nav', function (){
-    return view('pages/layout/top-nav');
+Route::get('/pages/layout/top-nav', function (){
+    return view('pages/layout/top-nav1');
 });
 
-Route::get('boxed', function (){
+Route::get('/pages/layout/boxed', function (){
     return view('pages/layout/boxed');
 });
 
-Route::get('fixed', function (){
+Route::get('/pages/layout/fixed', function (){
     return view('pages/layout/fixed');
 });
 
-Route::get('collapsed-sidebar', function (){
+Route::get('/pages/layout/collapsed-sidebar', function (){
     return view('pages/layout/collapsed-sidebar');
 });
 
-Route::get('widgets', function (){
+Route::get('/pages/widgets', function (){
     return view('pages/widgets');
 });
 
-Route::get('chartjs', function (){
+Route::get('/pages/charts/chartjs', function (){
     return view('pages/charts/chartjs');
 });
 
-Route::get('morris', function (){
+Route::get('/pages/charts/morris', function (){
     return view('pages/charts/morris');
 });
 
-Route::get('flot', function (){
+Route::get('/pages/charts/flot', function (){
     return view('pages/charts/flot');
 });
 
-Route::get('inline', function (){
+Route::get('/pages/charts/inline', function (){
     return view('pages/charts/inline');
 });
 
-Route::get('general', function (){
+Route::get('/pages/UI/general', function (){
     return view('pages/UI/general');
 });
 
-Route::get('icons', function (){
+Route::get('/pages/UI/icons', function (){
     return view('pages/UI/icons');
 });
 
-Route::get('buttons', function (){
+Route::get('/pages/UI/buttons', function (){
     return view('pages/UI/buttons');
 });
 
-Route::get('sliders', function (){
+Route::get('/pages/UI/sliders', function (){
     return view('pages/UI/sliders');
 });
 
-Route::get('timeline', function (){
+Route::get('/pages/UI/timeline', function (){
     return view('pages/UI/timeline');
 });
 
-Route::get('modals', function (){
+Route::get('/pages/UI/modals', function (){
     return view('pages/UI/modals');
 });
 
-Route::get('general', function (){
+Route::get('/pages/forms/general', function (){
     return view('pages/forms/general');
 });
 
-Route::get('advanced', function (){
+Route::get('/pages/forms/advanced', function (){
     return view('pages/forms/advanced');
 });
 
-Route::get('editors', function (){
+Route::get('/pages/forms/editors', function (){
     return view('pages/forms/editors');
 });
 
-Route::get('simple', function (){
+Route::get('/pages/tables/simple', function (){
     return view('pages/tables/simple');
 });
 
-Route::get('data', function (){
+Route::get('/pages/tables/data', function (){
     return view('pages/tables/data');
 });
 
-Route::get('calendar', function (){
+Route::get('/pages/calendar', function (){
     return view('pages/calendar');
 });
 
-Route::get('composer', function (){
+Route::get('/pages/mail/composer', function (){
     return view('pages/mailbox/composer');
 });
 
-Route::get('mailbox', function (){
+Route::get('/pages/mail/mailbox', function (){
     return view('pages/mailbox/mailbox');
 });
 
-Route::get('real-mail', function (){
+Route::get('/pages/mail/real-mail', function (){
     return view('pages/mailbox/real-mail');
 });
 
-Route::get('404', function (){
+Route::get('/pages/examples/404', function (){
     return view('pages/examples/404');
 });
 
-Route::get('500', function (){
+Route::get('/pages/examples/500', function (){
     return view('pages/examples/500');
 });
 
-Route::get('blank', function (){
+Route::get('/pages/examples/blank', function (){
     return view('pages/examples/blank');
 });
 
-Route::get('invoice-print', function (){
+Route::get('/pages/examples/invoice-print', function (){
     return view('pages/examples/invoice-print');
 });
 
-Route::get('invoice', function (){
+Route::get('/pages/examples/invoice', function (){
     return view('pages/examples/invoice');
 });
 
-Route::get('lockscreen', function (){
+Route::get('/pages/examples/lockscreen', function (){
     return view('pages/examples/lockscreen');
 });
 
-Route::get('login', function (){
+Route::get('/pages/examples/login', function (){
     return view('pages/examples/login');
 });
 
-Route::get('pace', function (){
+Route::get('/pages/examples/pace', function (){
     return view('pages/examples/pace');
 });
 
-Route::get('profile', function (){
+Route::get('/pages/examples/profile', function (){
     return view('pages/examples/profile');
 });
 
-Route::get('register', function (){
+Route::get('/pages/examples/register', function (){
     return view('pages/examples/register');
 });
 
-Route::get('index', function (){
-    return view('documentation/index');
+Route::get('/pages/documentation/index', function (){
+    return view('pages/documentation/index');
 });
+
 
 
 

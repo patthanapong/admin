@@ -3,19 +3,6 @@
 @section('content')
     
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <h1>
-            AdminLTE Documentation
-            <small>Version 2.3</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Documentation</li>
-          </ol>
-        </div>
 
         <!-- Main content -->
         <div class="content body">
@@ -2082,5 +2069,6 @@ AdminLTE/
     <script src="docs.js"></script>
   </body>
 </html>
+
 
 @endsection
