@@ -1,4 +1,7 @@
 @extends('master')
+@section('footer')
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script> 
+@endsection
 @section('content')
     <section class="content-header">
  <h1>

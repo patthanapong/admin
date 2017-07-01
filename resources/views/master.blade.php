@@ -763,7 +763,7 @@ script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
 
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script> 
+{{-- <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>  --}}
 {{-- ACTIVE SELETE SHOW --}}
 
 
