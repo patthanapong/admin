@@ -193,6 +193,21 @@
         </li>
         
         <li><a href="/pages/documentation/index"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Form User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/create"><i class="fa fa-circle-o"></i> Create User</a></li>
+            <li><a href="/index"><i class="fa fa-circle-o"></i> Show User</a></li>
+            
+          </ul>
+        </li>
+
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

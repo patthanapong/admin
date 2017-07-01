@@ -176,6 +176,13 @@ Route::get('/pages/documentation/index', function (){
 });
 
 
+Route::get('/index', 'UserController@index');
+Route::get('/create', 'UserController@create');
+Route::post('/create', 'UserController@store');
+Route::get('/edit/{user}', 'UserController@edit');
+Route::post('/edit/{user}', 'UserController@update');
+Route::delete('/index/{user}', 'UserController@destroy');
+
 
 
     
