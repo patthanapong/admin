@@ -32,7 +32,7 @@
               	</div>			
 			@endif             
             <!-- form start -->
-            <form role="form" method="post" action="/create">
+            <form role="form" method="post" action="dolladeposit/create">
             	{{ csrf_field() }}
               <div class="box-body">
               	<div class="col-md-6">
