@@ -61,8 +61,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/create"><i class="fa fa-circle-o"></i> Add WithDraw</a></li>
-            <li><a href="/index"><i class="fa fa-circle-o"></i> Show WithDraw</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Add WithDraw</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Show WithDraw</a></li>
             
           </ul>
         </li>
