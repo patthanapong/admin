@@ -27,42 +27,42 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Form User</span>
+            <i class="fa fa-edit"></i> <span>จัดการสมาชิก</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/create"><i class="fa fa-circle-o"></i> Create User</a></li>
-            <li><a href="/index"><i class="fa fa-circle-o"></i> Show User</a></li>
+            <li><a href="/create"><i class="fa fa-circle-o"></i>สมัครสมาชิก</a></li>
+            <li><a href="/index"><i class="fa fa-circle-o"></i>รายละเอียดสมาชิก</a></li>
             
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Deposit</span>
+            <i class="fa fa-folder"></i> <span>แจ้งการฝากเงิน</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/dolladeposit/create"><i class="fa fa-circle-o"></i> Add Deposit</a></li>
-            <li><a href="/dolladeposit"><i class="fa fa-circle-o"></i> Show Deposit</a></li>
+            <li><a href="/dolladeposit/create"><i class="fa fa-circle-o"></i>ฝากเงิน</a></li>
+            <li><a href="/dolladeposit"><i class="fa fa-circle-o"></i>รายละเอียดการฝากเงิน</a></li>
             
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>WithDraw</span>
+            <i class="fa fa-folder"></i> <span>แจ้งการถอนเงิน</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Add WithDraw</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Show WithDraw</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>ถอนเงิน</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>รายละเอียดการถอนเงิน</a></li>
             
           </ul>
         </li>

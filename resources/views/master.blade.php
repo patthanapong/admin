@@ -427,6 +427,17 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+  @if(session()->get('message'))
+      <div class="callout callout-success">
+          <h4>{{session()->get('Titlemessage') }}</h4>
+
+          <p> {{session()->get('message') }}</p>
+      </div>
+  @endif
+
+
+
+
     @yield('content')
   </div>
   <!-- /.content-wrapper -->

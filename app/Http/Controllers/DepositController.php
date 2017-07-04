@@ -39,7 +39,8 @@ class DepositController extends Controller
         
             DB::table('deposit')
             ->insert($datas);
-
+            session()->flash('Titlemessage', 'Success');
+            session()->flash('message', 'Add Deposit Success');
              return redirect('/dolladeposit');
              } catch (Exception $d) {
                  abor(500);

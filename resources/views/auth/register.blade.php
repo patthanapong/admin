@@ -37,21 +37,50 @@
 
       {{ csrf_field() }}
 
+      <div class="form-group{{ $errors->has('fullname') ? ' has-error' : '' }}">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Full name" name="fullname">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+         @if ($errors->has('fullname'))
+				            <span class="help-block">
+				                <strong>{{ $errors->first('fullname') }}</strong>
+				            </span>
+				 @endif   
       </div>
+      
+      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+         @if ($errors->has('email'))
+				            <span class="help-block">
+				                <strong>{{ $errors->first('email') }}</strong>
+				            </span>
+				@endif   
       </div>
+
+      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
       <div class="form-group has-feedback">
         <input type="password" class="form-control" placeholder="Password" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        @if ($errors->has('password'))
+				            <span class="help-block">
+				                <strong>{{ $errors->first('password') }}</strong>
+				            </span>
+				@endif 
       </div>
+
+      <div class="form-group{{ $errors->has('retypepassword') ? ' has-error' : '' }}">
       <div class="form-group has-feedback">
         <input type="password" class="form-control" placeholder="Retype password" name="retypepassword">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+         @if ($errors->has('retypepassword'))
+				            <span class="help-block">
+				                <strong>{{ $errors->first('retypepassword') }}</strong>
+				            </span>
+				@endif 
       </div>
       
       <div class="row">

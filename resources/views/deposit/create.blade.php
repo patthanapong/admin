@@ -27,35 +27,38 @@
   <link rel="stylesheet" media="all" type="text/css" href="{{asset('date/jquery-ui.css')}}" />
   <link rel="stylesheet" media="all" type="text/css" href="{{asset('date/jquery-ui-timepicker-addon.css')}}" />
 
+
+
+        {{-- ปฏิทินจบ --}}
+@endsection
+@section('footer')
+{{-- <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>  --}}
   <script src="{{asset('date/jquery-1.10.2.min.js')}}"></script>
   <script  src="{{asset('date/jquery-ui.min.js')}}"></script>
 
   <script  src="{{asset('date/jquery-ui-timepicker-addon.js')}}"></script>
   <script  src="{{asset('date/jquery-ui-sliderAccess.js')}}"></script>
 
-        {{-- ปฏิทินจบ --}}
-@endsection
-@section('footer')
-{{-- <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>  --}}
+	<script type="text/javascript">
+		$(function(){
+			$("#dateInput").datetimepicker({
+			dateFormat: 'yy-mm-dd',
+			timeFormat: 'HH:mm:ss'
+			});
+		});
+
+	</script>
 @endsection
 
 @section('content')
 
 
-<script type="text/javascript">
-    $(function(){
-    	$("#dateInput").datetimepicker({
-        dateFormat: 'yy-mm-dd',
-        timeFormat: 'HH:mm:ss'
-    	});
-    });
 
-    </script>
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Information
+        Deposit Information
       </h1>
       
     </section>
@@ -68,46 +71,46 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">ข้อมูลส่วนตัว</h3>
+              <h3 class="box-title">แจ้งการฝากเงิน</h3>
             </div>
             <!-- /.box-header -->
-			@if (session()->has('status'))
+			{{-- @if (session()->has('status'))
 				<div class="alert alert-success alert-dismissible">
 	                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 	                <h4><i class="icon fa fa-check"></i> Success!</h4>
 	                {{ session('status') }}
               	</div>			
-			@endif             
+			@endif              --}}
             <!-- form start -->
             <form role="form" method="post" action="/dolladeposit">
             	{{ csrf_field() }}
               <div class="box-body">
               	<div class="col-md-6">
 	                <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-	                  <label for="username">username</label>
-	                  <input type="text" class="form-control" id="username" placeholder="Enter Name" name="username" value="{{ old('username') }}">
+	                  <label for="username">ชื่อ-นามสกุล</label>
+	                  <input type="text" class="form-control" id="username"  name="username" value="{{ old('username') }}">
 
-				        @if ($errors->has('fullname'))
+				        @if ($errors->has('username'))
 				            <span class="help-block">
-				                <strong>{{ $errors->first('fullname') }}</strong>
+				                <strong>{{ $errors->first('username') }}</strong>
 				            </span>
 				        @endif   	                  
 	                </div>
 
 	                <div class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
-	                  <label for="balance">balance</label>
-	                  <input type="text" class="form-control" id="balance" placeholder="balance" name="balance" value="{{ old('balance') }}">
+	                  <label for="balance">จำนวนเงิน</label>
+	                  <input type="text" class="form-control" id="balance"  name="balance" value="{{ old('balance') }}">
 
-				        @if ($errors->has('email'))
+				        @if ($errors->has('balance'))
 				            <span class="help-block">
-				                <strong>{{ $errors->first('email') }}</strong>
+				                <strong>{{ $errors->first('balance') }}</strong>
 				            </span>
 				        @endif   		                  
 	                </div>
 
 	                <div class="form-group{{ $errors->has('bankdeposit') ? ' has-error' : '' }}">
-	                  <label for="bankdeposit">bankdeposit</label>
-	                  <input type="bankdeposit" class="form-control" id="bankdeposit" placeholder="New Password" name="bankdeposit" value="{{ old('bankdeposit') }}">
+	                  <label for="bankdeposit">ธนาคารที่ต้องการฝาก</label>
+	                  <input type="text" class="form-control" id="bankdeposit"  name="bankdeposit" value="{{ old('bankdeposit') }}">
 
 				        @if ($errors->has('bankdeposit'))
 				            <span class="help-block">
@@ -117,8 +120,8 @@
 	                </div>
 
                      <div class="form-group{{ $errors->has('accountnumberdeposit') ? ' has-error' : '' }}">
-	                  <label for="accountnumberdeposit">accountnumberdeposit</label>
-	                  <input type="accountnumberdeposit" class="form-control" id="accountnumberdeposit" placeholder="New Password" name="accountnumberdeposit" value="{{ old('accountnumberdeposit') }}">
+	                  <label for="accountnumberdeposit">เลขที่บัญชี</label>
+	                  <input type="text" class="form-control" id="accountnumberdeposit"  name="accountnumberdeposit" value="{{ old('accountnumberdeposit') }}">
 
 				        @if ($errors->has('accountnumberdeposit'))
 				            <span class="help-block">
@@ -128,8 +131,8 @@
 	                </div>
 
                     <div class="form-group{{ $errors->has('accontnamedeposit') ? ' has-error' : '' }}">
-	                  <label for="accontnamedeposit">accontnamedeposit</label>
-	                  <input type="accontnamedeposit" class="form-control" id="accontnamedeposit" placeholder="accontnamedeposit" name="accontnamedeposit" value="{{ old('accontnamedeposit') }}">
+	                  <label for="accontnamedeposit">ชื่อบัญชี</label>
+	                  <input type="text" class="form-control" id="accontnamedeposit"  name="accontnamedeposit" value="{{ old('accontnamedeposit') }}">
 
 				        @if ($errors->has('accontnamedeposit'))
 				            <span class="help-block">
@@ -139,8 +142,8 @@
 	                </div>
                     
                      <div class="form-group{{ $errors->has('datetime') ? ' has-error' : '' }}">
-	                  <label for="datetime">datetime</label>
-	                  <input type="datetime" class="form-control" id="dateInput" placeholder="datetime" name="datetime">
+	                  <label for="datetime">วัน/เวลา</label>
+	                  <input type="text" class="form-control" id="dateInput"  name="datetime" value="{{ old('datetime') }}">
 
 				        @if ($errors->has('datetime'))
 				            <span class="help-block">
@@ -150,8 +153,8 @@
 	                </div>
                     
                       <div class="form-group{{ $errors->has('channeldeposit') ? ' has-error' : '' }}">
-	                  <label for="channeldeposit">channeldeposit</label>
-	                  <input type="channeldeposit" class="form-control" id="channeldeposit" placeholder="channeldeposit" name="channeldeposit">
+	                  <label for="channeldeposit">ช่องการในการฝากเงิน</label>
+	                  <input type="text" class="form-control" id="channeldeposit"  name="channeldeposit" value="{{ old('channeldeposit') }}">
 
 				        @if ($errors->has('channeldeposit'))
 				            <span class="help-block">
@@ -160,9 +163,9 @@
 				        @endif   		                  
 	                </div>
 	                
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-	                  <label for="tel">tel</label>
-	                  <input type="tel" class="form-control" id="tel" placeholder="tel" name="tel">
+                    <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }}">
+	                  <label for="tel">เบอร์โทรศัพท์</label>
+	                  <input type="text" class="form-control" id="tel"  name="tel" value="{{ old('tel') }}">
 
 				        @if ($errors->has('tel'))
 				            <span class="help-block">
@@ -171,9 +174,9 @@
 				        @endif   		                  
 	                </div>
 
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-	                  <label for="opinion">opinion</label>
-	                  <input type="opinion" class="form-control" id="opinion" placeholder="opinion" name="opinion">
+                    <div class="form-group{{ $errors->has('opinion') ? ' has-error' : '' }}">
+	                  <label for="opinion">ความคิดเห็น</label>
+	                  <textarea type="text" class="form-control" rows="3" id="opinion" name="opinion" value="{{ old('opinion') }}"></textarea>
 
 				        @if ($errors->has('opinion'))
 				            <span class="help-block">
@@ -188,8 +191,8 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input type="submit"  class="btn btn-primary " value="Save">
-                <input type="reset"  class="btn btn-danger " value="Cancel">
+                <input type="submit"  class="btn btn-success " value="บันทึก">
+                <input type="reset"  class="btn btn-danger " value="ยกเลิก">
               </div>
             </form>
           </div>

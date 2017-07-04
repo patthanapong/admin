@@ -28,9 +28,11 @@
 @endsection
 @section('content')
     <section class="content-header">
+    
+     
  <h1>
-        From User
-        <small>data all user</small>
+        รายละเอียดในการฝากเงิน
+        <small>data all deposit</small>
       </h1>
 <section class="content">
       <div class="row">
@@ -43,16 +45,16 @@
                 <thead>
                 <tr>
                         <td>#</td>
-                        <td>Username</td>
-                        <td>Balance</td>
-                        <td>BankDeposit</td>
-                        <td>AccountNumberdeposit</td>
-                        <td>AccountNamedeposit</td>
-                        <td>DateTime</td>
-                        <td>ChannelDeposit</td>
-                        <td>Tel.</td>
-                        <td>Opinion</td>
-                        <td>Action</td>
+                        <td>ชื่อ-นามสกุล</td>
+                        <td>จำนวนเงิน</td>
+                        <td>ธนาคารที่ต้องการฝาก</td>
+                        <td>เลขที่บัญชี</td>
+                        <td>ชื่อบัญชี</td>
+                        <td>วัน/เวลา</td>
+                        <td>ช่องทางในการฝากเงิน</td>
+                        <td>เบอร์โทรศัทพ์.</td>
+                        <td>ความคิดเห็น</td>
+                        <td></td>
                 </tr>
                 </thead>
                 @foreach($deposit as $d)
