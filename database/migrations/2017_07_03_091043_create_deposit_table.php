@@ -23,7 +23,7 @@ class CreateDepositTable extends Migration
       $table->datetime('datetime');
       $table->string('channeldeposit');
       $table->string('tel');
-      $table->string('opinion');
+      $table->string('opinion')->default('');
           });
     }
 

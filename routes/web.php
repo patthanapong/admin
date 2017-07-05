@@ -34,7 +34,7 @@ Route::post('/edit/{user}', 'UserController@update');
 Route::delete('/index/{user}', 'UserController@destroy');
 
 Route::resource('/dolladeposit', 'DepositController');
-Route::resource('/dollawithdraw', 'Withdrawcontroller');
+Route::resource('/dollawithdraw', 'WithDrawController');
 
 
 

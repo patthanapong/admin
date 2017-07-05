@@ -61,8 +61,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>ถอนเงิน</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>รายละเอียดการถอนเงิน</a></li>
+            <li><a href="/dollawithdraw/create"><i class="fa fa-circle-o"></i>ถอนเงิน</a></li>
+            <li><a href="/dollawithdraw"><i class="fa fa-circle-o"></i>รายละเอียดการถอนเงิน</a></li>
             
           </ul>
         </li>

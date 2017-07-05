@@ -82,7 +82,7 @@
               	</div>			
 			@endif              --}}
             <!-- form start -->
-            <form role="form" method="post" action="/dolladeposit">
+            <form role="form" method="post" action="/dollawithdraw">
             	{{ csrf_field() }}
               <div class="box-body">
               	<div class="col-md-6">
@@ -108,10 +108,10 @@
 				        @endif   		                  
 	                </div>
 
-	                <div class="form-group{{ $errors->has('bankdeposit') ? ' has-error' : '' }}">
-	                  <label for="bankdeposit">ธนาคารที่ต้องการฝาก</label>
-	                  {{-- <input type="text" class="form-control" id="bankdeposit"  name="bankdeposit" value="{{ old('bankdeposit') }}"> --}}
-					  <select class="form-control" name="bankdeposit" id="bankdeposit">
+	                <div class="form-group{{ $errors->has('bankwithdraw') ? ' has-error' : '' }}">
+	                  <label for="bankwithdraw">ธนาคารที่ต้องการฝาก</label>
+	                  {{-- <input type="text" class="form-control" id="bankwithdraw"  name="bankwithdraw" value="{{ old('bankwithdraw') }}"> --}}
+                      <select class="form-control" name="bankwithdraw" id="bankwithdraw">
                         <option value="">SELECT</option>
                         <option value="ธ.กสิกรไทย">ธ.กสิกรไทย</option>
                         <option value="ธ.กรุงเทพ">ธ.กรุงเทพ</option>
@@ -121,31 +121,32 @@
                         <option value="ธ.ทหารไทย">ธ.ทหารไทย</option>
                         <option value="ธ.ออมสิน">ธ.ออมสิน</option>
                     </select>
-				        @if ($errors->has('bankdeposit'))
+
+				        @if ($errors->has('bankwithdraw'))
 				            <span class="help-block">
-				                <strong>{{ $errors->first('bankdeposit') }}</strong>
+				                <strong>{{ $errors->first('bankwithdraw') }}</strong>
 				            </span>
 				        @endif   		                  
 	                </div>
 
-                     <div class="form-group{{ $errors->has('accountnumberdeposit') ? ' has-error' : '' }}">
-	                  <label for="accountnumberdeposit">เลขที่บัญชี</label>
-	                  <input type="text" class="form-control" id="accountnumberdeposit"  name="accountnumberdeposit" value="{{ old('accountnumberdeposit') }}">
+                     <div class="form-group{{ $errors->has('accountnumberwithdraw') ? ' has-error' : '' }}">
+	                  <label for="accountnumberwithdraw">เลขที่บัญชี</label>
+	                  <input type="text" class="form-control" id="accountnumberwithdraw"  name="accountnumberwithdraw" value="{{ old('accountnumberwithdraw') }}">
 
-				        @if ($errors->has('accountnumberdeposit'))
+				        @if ($errors->has('accountnumberwithdraw'))
 				            <span class="help-block">
-				                <strong>{{ $errors->first('accountnumberdeposit') }}</strong>
+				                <strong>{{ $errors->first('accountnumberwithdraw') }}</strong>
 				            </span>
 				        @endif   		                  
 	                </div>
 
-                    <div class="form-group{{ $errors->has('accontnamedeposit') ? ' has-error' : '' }}">
-	                  <label for="accontnamedeposit">ชื่อบัญชี</label>
-	                  <input type="text" class="form-control" id="accontnamedeposit"  name="accontnamedeposit" value="{{ old('accontnamedeposit') }}">
+                    <div class="form-group{{ $errors->has('accountnamewithdraw') ? ' has-error' : '' }}">
+	                  <label for="accountnamewithdraw">ชื่อบัญชี</label>
+	                  <input type="text" class="form-control" id="accountnamewithdraw"  name="accountnamewithdraw" value="{{ old('accountnamewithdraw') }}">
 
-				        @if ($errors->has('accontnamedeposit'))
+				        @if ($errors->has('accountnamewithdraw'))
 				            <span class="help-block">
-				                <strong>{{ $errors->first('accontnamedeposit') }}</strong>
+				                <strong>{{ $errors->first('accountnamewithdraw') }}</strong>
 				            </span>
 				        @endif   		                  
 	                </div>
@@ -161,20 +162,20 @@
 				        @endif   		                  
 	                </div>
                     
-                      <div class="form-group{{ $errors->has('channeldeposit') ? ' has-error' : '' }}">
-	                  <label for="channeldeposit">ช่องการในการฝากเงิน</label>
-	                  {{-- <input type="text" class="form-control" id="channeldeposit"  name="channeldeposit" value="{{ old('channeldeposit') }}"> --}}
-					   <select class="form-control" name="channeldeposit" id="channeldeposit">
+                      <div class="form-group{{ $errors->has('channelwithdraw') ? ' has-error' : '' }}">
+	                  <label for="channelwithdraw">ช่องการในการฝากเงิน</label>
+	                  {{-- <input type="text" class="form-control" id="channelwithdraw"  name="channelwithdraw" value="{{ old('channelwithdraw') }}"> --}}
+                      <select class="form-control" name="channelwithdraw" id="channelwithdraw">
                         <option value="">SELECT</option>
                         <option value="ATM">ATM</option>
                         <option value="MoblieBanking">MoblieBanking</option>
                         <option value="InternetBanking">InternetBanking</option>
                         <option value="Bank">Bank</option>
                     </select>
-
-				        @if ($errors->has('channeldeposit'))
+                    
+				        @if ($errors->has('channelwithdraw'))
 				            <span class="help-block">
-				                <strong>{{ $errors->first('channeldeposit') }}</strong>
+				                <strong>{{ $errors->first('channelwithdraw') }}</strong>
 				            </span>
 				        @endif   		                  
 	                </div>
