@@ -14,7 +14,7 @@ class ActivityLogController extends Controller
         // ->get();
         $activitylog = Activity_Log::where('user_id', auth()->user()->id)->orderBy('id','asc')->paginate(10);
 
-        return view('activitylog.index', compact('activitylog'));
+        return view('ActivityLog.index', compact('activitylog'));
        
     }
 
