@@ -27,6 +27,12 @@ class ProfileController extends Controller
 		$user->password = bcrypt( request('password'));
 		$user->save();
 
+         Activity_Log::create([
+                'user_id' => auth()->user()->id,
+                'message' => 'สมัครสมาชิก'    
+            ]);
+
+
 		return back()->with('status','Update complete!');
 	}
 

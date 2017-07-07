@@ -26,15 +26,17 @@ Route::get('index2', function (){
     return view('index2');
 });
 
-Route::get('/index', 'UserController@index');
-Route::get('/create', 'UserController@create');
-Route::post('/create', 'UserController@store');
-Route::get('/edit/{user}', 'UserController@edit');
-Route::post('/edit/{user}', 'UserController@update');
-Route::delete('/index/{user}', 'UserController@destroy');
+Route::get('/user/index', 'UserController@index');
+Route::get('/user/create', 'UserController@create');
+Route::post('/user', 'UserController@store');
+Route::get('/user/edit/{user}', 'UserController@edit');
+Route::post('/user/edit/{user}', 'UserController@update');
+Route::delete('/user/index/{user}', 'UserController@destroy');
 
 Route::resource('/dolladeposit', 'DepositController');
 Route::resource('/dollawithdraw', 'WithDrawController');
+
+Route::get('/activity/index', 'ActivityLogController@index');
 
 
 

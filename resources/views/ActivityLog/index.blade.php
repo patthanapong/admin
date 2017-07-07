@@ -31,8 +31,8 @@
     
      
  <h1>
-        รายละเอียดในการฝากเงิน
-        <small>data all deposit</small>
+        รายละเอียดของข้อมูลทั้งหมด
+        <small>data all</small>
       </h1>
 <section class="content">
       <div class="row">
@@ -45,30 +45,19 @@
                 <thead>
                 <tr>
                         <td>#</td>
-                        <td>ชื่อ-นามสกุล</td>
-                        <td>จำนวนเงิน</td>
-                        <td>ธนาคารที่ต้องการฝาก</td>
-                        <td>เลขที่บัญชี</td>
-                        <td>ชื่อบัญชี</td>
-                        <td>วัน/เวลา</td>
-                        <td>ช่องทางในการฝากเงิน</td>
-                        <td>เบอร์โทรศัทพ์.</td>
-                        <td>ความคิดเห็น</td>
+                        <td>ชือ</td>
+                        <td>กิจกรรม</td>
+                        <td>เวลาทำการ</td>
                         <td></td>
                 </tr>
                 </thead>
-                @foreach($deposit as $d)
+                @foreach($activitylog as $w)
                     <tr>
-                        <td>{{ $d->id }}</td>
-                        <td>{{ $d->username }}</td>
-                        <td>{{ $d->balance }}</td>
-                        <td>{{ $d->bankdeposit }}</td>
-                        <td>{{ $d->accountnumberdeposit }}</td>
-                        <td>{{ $d->accontnamedeposit }}</td>
-                        <td>{{ $d->datetime }}</td>
-                        <td>{{ $d->channeldeposit }}</td>
-                        <td>{{ $d->tel }}</td>
-                        <td>{{ $d->opinion }}</td>
+                        <td>{{ $w->id }}</td>
+                        <td>{{ $w->user->fullname }}</td>
+                        <td>{{ $w->message }}</td>
+                        <td>{{ $w->created_at }}</td>
+                        
                         <td><a href="#" class="btn btn-default btn-xs ">Edit</a>
                        
                        <form action="#" method="POST">
@@ -80,7 +69,7 @@
                         </form>
                        </td>
                     </tr>
-                     @endforeach
+                @endforeach
                 </table>
             </div>
             <!-- /.box-body -->
@@ -91,5 +80,5 @@
       </div>
       <!-- /.row -->
     </section>
-    {{ $deposit->links() }}
+    {{ $activitylog->links() }}
 @endsection

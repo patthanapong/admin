@@ -65,4 +65,5 @@
       </div>
       <!-- /.row -->
     </section>
+    {{ $user->links() }}
 @endsection

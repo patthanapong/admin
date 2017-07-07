@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Activity_Log;
 
 class AuthController extends Controller
 {
@@ -16,6 +17,14 @@ class AuthController extends Controller
     {
          $inputs = request()->except([ '_token' ]);
         if(auth()->attempt($inputs)) {
+            
+            Activity_Log::create([
+                'user_id' => auth()->user()->id,
+                'message' => 'Login'
+                
+            ]);
+
+
             session()->flash('Titlemessage', 'Success');
             session()->flash('message', 'Login Success');
             return redirect()->intended('/');
@@ -26,6 +35,14 @@ class AuthController extends Controller
     }
 
     public function logout(){
+
+
+            Activity_Log::create([
+                'user_id' => auth()->user()->id,
+                'message' => 'Logout'    
+            ]);
+
+
         auth()->logout();
         return redirect('/');
     }

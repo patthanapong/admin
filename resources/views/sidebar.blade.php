@@ -33,8 +33,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/create"><i class="fa fa-circle-o"></i>สมัครสมาชิก</a></li>
-            <li><a href="/index"><i class="fa fa-circle-o"></i>รายละเอียดสมาชิก</a></li>
+            <li><a href="/user/create"><i class="fa fa-circle-o"></i>สมัครสมาชิก</a></li>
+            <li><a href="/user/index"><i class="fa fa-circle-o"></i>รายละเอียดสมาชิก</a></li>
+            
+          </ul>
+        </li>
+
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-text"></i> <span>Activity Log</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/activity/index"><i class="fa fa-circle-o"></i>Show History</a></li>
+            
             
           </ul>
         </li>

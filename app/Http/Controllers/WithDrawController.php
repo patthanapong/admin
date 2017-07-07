@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Withdraw;
+use App\Activity_Log;
 
 class WithDrawController extends Controller
 {
     public function index()
     {
-        $withdraw = DB::table('withdraw')
-        ->get();
+        // $withdraw = DB::table('withdraws')
+        // ->get();
+        $withdraw = Withdraw::paginate(10);
         return view('withdraw.index', compact('withdraw'));
     }
 
@@ -29,20 +32,60 @@ class WithDrawController extends Controller
             'accountnamewithdraw' => 'required',
             'datetime' => 'required',
             'channelwithdraw' => 'required',
-            'tel' => 'required|max:10',
-             'opinion' => 'required'
+            'tel' => 'required|max:10'
+             
+
          ];
 
            $datas = request()->except([ '_token' ]);
-          $this->validate($request,$rules);
+          //$this->validate($request,$rules);
 
          try{
-        
-            DB::table('withdraw')
-            ->insert($datas);
+
+            if ($request->opinion) {
+                Withdraw::create([
+            'username' => auth()->user()->fullname, 
+            'balance' => $request->balance,
+            'bankwithdraw' => $request->bankwithdraw, 
+            'accountnumberwithdraw'=> $request->accountnumberwithdraw, 
+            'accountnamewithdraw'=> $request->accountnamewithdraw, 
+            'datetime'=> $request->datetime, 
+            'channelwithdraw'=> $request->channelwithdraw,
+            'tel'=> $request->tel, 
+            'opinion' => $request->opinion
+            ]);
+
+                Activity_Log::create([
+                        'user_id' => auth()->user()->id,
+                        'message' => 'แจ้งการถอนเงิน'                   
+                ]);
+
+            } else {
+                Withdraw::create([
+            'username' => auth()->user()->fullname, 
+            'balance' => $request->balance,
+            'bankwithdraw' => $request->bankwithdraw, 
+            'accountnumberwithdraw'=> $request->accountnumberwithdraw, 
+            'accountnamewithdraw'=> $request->accountnamewithdraw, 
+            'datetime'=> $request->datetime, 
+            'channelwithdraw'=> $request->channelwithdraw,
+            'tel'=> $request->tel, 
+            'opinion' => ''
+            ]);
+
+                Activity_Log::create([
+                        'user_id' => auth()->user()->id,
+                        'message' => 'แจ้งการถอนเงิน'                   
+                ]);
+            }
+
+            
+            // DB::table('withdraw')
+            // ->insert($datas);
             session()->flash('Titlemessage', 'Success');
             session()->flash('message', 'Add WithDraw Success');
-             return redirect('/dollawithdraw');
+
+              return redirect('/dollawithdraw');
              } catch (Exception $d) {
                  abor(500);
              }

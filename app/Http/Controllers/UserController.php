@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Activity_Log;
+use App\User;
 
 class UserController extends Controller
 {
@@ -18,8 +20,9 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = DB::table('users')
-        ->get();
+        // $user = DB::table('users')
+        // ->get();
+        $user = User::paginate(10);
         return view('user.index', compact('user'));
     }   
 
@@ -45,8 +48,12 @@ class UserController extends Controller
         'password' => $password,
         ]);
 
+            Activity_Log::create([
+                'user_id' => auth()->user()->id,
+                'message' => 'สมัครสมาชิก'    
+            ]);
 
-        return redirect('/index');
+        return redirect('/user/index');
 
         }else{return "password error";}
     }

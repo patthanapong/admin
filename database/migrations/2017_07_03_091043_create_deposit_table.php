@@ -13,7 +13,7 @@ class CreateDepositTable extends Migration
      */
     public function up()
     {
-        Schema::create('deposit', function(Blueprint $table) {
+        Schema::create('deposits', function(Blueprint $table) {
       $table->increments('id');
       $table->string('username');
       $table->string('balance');
@@ -23,7 +23,8 @@ class CreateDepositTable extends Migration
       $table->datetime('datetime');
       $table->string('channeldeposit');
       $table->string('tel');
-      $table->string('opinion')->default('');
+      $table->string('opinion');
+      $table->timestamps();
           });
     }
 
@@ -34,6 +35,6 @@ class CreateDepositTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deposit');
+        Schema::dropIfExists('deposits');
     }
 }

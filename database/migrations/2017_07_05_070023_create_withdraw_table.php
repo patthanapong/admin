@@ -13,7 +13,7 @@ class CreateWithdrawTable extends Migration
      */
     public function up()
     {
-        Schema::create('withdraw', function(Blueprint $table) {
+        Schema::create('withdraws', function(Blueprint $table) {
       $table->increments('id');
       $table->string('username');//ชื่อลูกค้า
       $table->string('balance');//ยอดเงิน
@@ -24,7 +24,7 @@ class CreateWithdrawTable extends Migration
       $table->string('channelwithdraw');//ช่องทางการถอน
       $table->string('tel');//เบอร์โทร
       $table->string('opinion');//ความคิดเห็น
-
+      $table->timestamps();
       });
     }
 
@@ -35,6 +35,6 @@ class CreateWithdrawTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('withdraw');
+        Schema::dropIfExists('withdraws');
     }
 }
